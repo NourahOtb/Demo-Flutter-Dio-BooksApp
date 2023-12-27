@@ -15,7 +15,8 @@ class BookCard extends StatelessWidget {
             Expanded(
               flex: 2,
               child: Image.network(
-                book.image,
+                book.image ??
+                    "https://images-na.ssl-images-amazon.com/images/I/811P2-MIgsL.jpg",
                 fit: BoxFit.fill,
                 height: 150,
               ),
@@ -25,7 +26,7 @@ class BookCard extends StatelessWidget {
               child: Column(
                 children: [
                   ListTile(
-                    title: Text(book.title),
+                    title: Text(book.title ?? "Default"),
                     trailing: Chip(
                       label: Text("${book.price} KWD"),
                     ),

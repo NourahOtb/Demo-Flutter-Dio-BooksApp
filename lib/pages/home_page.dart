@@ -1,4 +1,5 @@
 import 'package:books_app/providers/books_provider.dart';
+import 'package:books_app/services/book_service.dart';
 import 'package:books_app/widgets/book_card.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -29,7 +30,9 @@ class HomePage extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.all(8.0),
               child: ElevatedButton(
-                onPressed: () {},
+                onPressed: () {
+                  context.read<BooksProvider>().getBooks();
+                },
                 child: const Padding(
                   padding: EdgeInsets.all(12.0),
                   child: Text("Get all books"),
